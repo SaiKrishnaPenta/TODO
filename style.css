@@ -1,0 +1,204 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark theme */
+body.dark {
+  background: #1e1e1e;
+  color: #f7f7f7;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  flex-wrap: wrap;
+}
+
+body.dark header {
+  background: #333;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Theme switch button */
+#toggleTheme {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .container {
+  background: #333;
+}
+
+/* Input section */
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+#addBtn {
+  padding: 8px 12px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.controls button {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1 1 45%;
+}
+
+/* Task list */
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #fafafa;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  flex-wrap: wrap;
+}
+
+body.dark #taskList li {
+  background: #444;
+}
+
+#taskList li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  header {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #toggleTheme {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-top: 0;
+  }
+
+  .controls button {
+    flex: 1 1 100%;
+  }
+
+  .input-section {
+    flex-direction: column;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  #taskList li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    margin-top: 5px;
+  }
+}
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+body.dark .progress-container {
+  background: #555;
+}
+
+body.dark #progressBar {
+  background: #76c776;
+}
